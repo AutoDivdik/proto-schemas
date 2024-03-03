@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package go.proto.enterprise;
 
+import "google/protobuf/timestamp.proto";
+
 option go_package = "gen/";
 
 service EnterpriseService {
@@ -26,6 +28,8 @@ message EnterpriseDto {
   string phone = 5;
   string fax = 6;
   TypeOfOwnershipDto typeOfOwnership = 7;
+  google.protobuf.Timestamp created = 8;
+  google.protobuf.Timestamp updated = 9;
 }
 
 message TypeOfOwnershipDto {

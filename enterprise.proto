@@ -1,19 +1,21 @@
-syntax="proto3";
+syntax = "proto3";
 
 package go.proto.enterprise;
 
 option go_package = "gen/";
 
 service EnterpriseService {
-  rpc GetEnterprisesList(GetEnterprisesListRequest) returns (GetEnterprisesListResponse) {
-
-  }
+  rpc GetEnterprisesList(GetEnterprisesListRequest) returns (GetEnterprisesListResponse) {}
+  rpc GetEnterpriseByID(GetEnterpriseByIDRequest) returns (GetEnterpriseByIDResponse) {}
 }
 
 message GetEnterprisesListRequest {}
 message GetEnterprisesListResponse {
   repeated EnterpriseDto enterprises = 1;
 }
+
+message GetEnterpriseByIDRequest {string id = 1;}
+message GetEnterpriseByIDResponse {EnterpriseDto enterprise = 1;}
 
 message EnterpriseDto {
   string id = 1;

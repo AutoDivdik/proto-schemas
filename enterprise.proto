@@ -28,12 +28,12 @@ message EnterpriseDto {
   uint32 maintenanceYear = 4 [(buf.validate.field).uint32.gt = 0];
   string phone = 5 [(buf.validate.field).string.min_len = 1];
   string fax = 6 [(buf.validate.field).string.min_len = 1];
-  TypeOfOwnershipDto typeOfOwnership = 7 [(buf.validate.field).string.min_len = 1];
+  TypeOfOwnershipDto typeOfOwnership = 7 [(validate.rules).message.required = true];
   optional google.protobuf.Timestamp created = 8;
   optional google.protobuf.Timestamp updated = 9;
 }
 
 message TypeOfOwnershipDto {
   string id = 1;
-  string name = 2 [(buf.validate.field).string.min_len = 1];
+  optional string name = 2 [(buf.validate.field).string.min_len = 1];
 }

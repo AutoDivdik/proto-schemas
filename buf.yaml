@@ -1,0 +1,15 @@
+version: v1
+deps:
+  - buf.build/googleapis/googleapis
+lint:
+  use:
+    - DEFAULT
+  ignore_only:
+    PACKAGE_DIRECTORY_MATCH:
+      - enterprise.proto
+    PACKAGE_VERSION_SUFFIX:
+      - enterprise.proto
+    RPC_REQUEST_RESPONSE_UNIQUE:
+      - enterprise.proto
+    RPC_RESPONSE_STANDARD_NAME:
+      - enterprise.proto

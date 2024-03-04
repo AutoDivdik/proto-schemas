@@ -35,5 +35,5 @@ message EnterpriseDto {
 
 message TypeOfOwnershipDto {
   string id = 1 [(buf.validate.field).string.min_len = 1];
-  optional string name = 2 [(buf.validate.field).string.min_len = 1];
+  string name = 2 [(buf.validate.field).string.min_len = 1];
 }
